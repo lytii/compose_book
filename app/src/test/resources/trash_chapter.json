@@ -1,0 +1,421 @@
+
+<!DOCTYPE html><html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport"
+content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"><meta name="csrf-param" content="_csrf"><meta name="csrf-token" content="NjM2NGQzZjBmNDk1YjZhYjlkY2Y4ZDNiNWM2ZTBiMDEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="><!-- TODO: Meta --><meta name="title" content="Read Trash of the Count's Family - Chapter 638: The Greatest Inn Overflowing with Hope and Love 5 online free - Light Novel Full"><meta name="description" content="Read Trash of the Count's Family - Chapter 638: The Greatest Inn Overflowing with Hope and Love 5 online free from your Mobile, Table, PC... Novel Updates Daily "><meta name="image" content="https://novelfull.com/uploads/thumbs/trash-of-the-counts-family-d946f9fa62-7ce9257d2cc60bb0b649c0ec498b23f9.jpeg"><meta name="keywords" content="Trash of the Count's Family - Chapter 638: The Greatest Inn Overflowing with Hope and Love 5"><title>Read Trash of the Count&#039;s Family - Chapter 638: The Greatest Inn Overflowing with Hope and Love 5 online free - Light Novel Full</title><link rel="preload" href="/web/fonts/RobotoCondensed-Regular.woff" as="font" crossorigin="anonymous" /><link rel="preload" href="/web/fonts/glyphicons-halflings-regular.woff2" as="font" crossorigin="anonymous" /><link rel="shortcut icon" href="/web/images/favicon.ico" type="image/x-icon"><link rel="icon" href="/web/images/favicon.ico" type="image/x-icon"><!--[if lt IE 9]><link rel="stylesheet" href="/web/css/iefix.css"><script defer src="/web/js/html5shiv.min.js"></script><script defer src="/web/js/respond.min.js"></script><![endif]--><script type="text/javascript">
+var adblock = true;
+var ajaxSearchUrl = 'https://novelfull.com/ajax-search';
+var ajaxNovelRateUrl = 'https://novelfull.com/ajax-novel-rate';
+var ajaxReportChapterUrl = 'https://novelfull.com/ajax-report-chapter';
+var ajaxUserSettingsUrl = 'https://novelfull.com/ajax-user-settings';
+var ajaxChapterOptionUrl = 'https://novelfull.com/ajax-chapter-option';
+</script><!-- <script type="text/javascript" src="/web/js/adframe.js?v=1"></script> --><script type="text/javascript" src="/web/js/plugins.js"></script><script type="text/javascript" src="/web/js/scripts.js"></script><!-- TODO: ExtraScript --><script type="text/javascript">
+$(document).ready(function() {
+$navBar = $('.toggle-nav-open');
+$navBar.on('click', function() {
+var open = $(this).hasClass('active') ? 'close' : 'open';
+changeStyle('nav-bar', open);
+saveStyle('nav-bar', open);
+$('header').toggle();
+$('.navbar-breadcrumb').toggle();
+});
+
+// Key for the chapter navigation
+$nextChap = $('#next_chap');
+$prevChap = $('#prev_chap');
+$(document).keydown(function (e) {
+var tag = e.target.tagName.toLowerCase();
+if (tag == 'input' || tag == 'textarea') return;
+
+var keypress = e.charCode ? e.charCode : e.keyCode;
+if (keypress == 39 || keypress == 68) {
+if (!$nextChap.attr('disabled')) {
+window.location = $nextChap.attr('href');
+}
+} else if (keypress == 37 || keypress == 65) {
+if (!$prevChap.attr('disabled')) {
+window.location = $prevChap.attr('href');
+}
+}
+});
+
+// TODO: Theme
+$container = $('#container');
+$chapter = $('#chapter');
+$chapterContent = $('#chapter-content');
+var chapterContent = $chapterContent.html();
+$options = $('#options');
+$options.show();
+$optionBackground = $('#option-background');
+$optionFontFamily = $('#option-font-family');
+$optionFontSize = $('#option-font-size');
+$optionLineHeight = $('#option-line-height');
+$optionFluidSwitch = $('input[type=radio][name=fluid-switch]');
+$optionNoLineBreak = $('input[type=radio][name=onebreak-switch]');
+$optionBackground.on('change', function() {
+changeStyle('background', $(this).val());
+saveStyle('background', $(this).val());
+});
+$optionFontFamily.on('change', function() {
+changeStyle('font-family', $(this).val());
+saveStyle('font-family', $(this).val());
+});
+$optionFontSize.on('change', function() {
+changeStyle('font-size', $(this).val());
+saveStyle('font-size', $(this).val());
+});
+$optionLineHeight.on('change', function() {
+changeStyle('line-height', $(this).val());
+saveStyle('line-height', $(this).val());
+});
+$optionFluidSwitch.on('change', function() {
+changeStyle('fluid-switch', $(this).val());
+saveStyle('fluid-switch', $(this).val());
+});
+$optionNoLineBreak.on('change', function() {
+changeStyle('onebreak-switch', $(this).val());
+saveStyle('onebreak-switch', $(this).val());
+});
+
+function changeStyle(style, value) {
+if (!value) return;
+switch (style) {
+case "background":
+$container.css('background-color', value);
+if (value == '#232323') {
+$container.addClass('dark-background');
+} else {
+$container.removeClass('dark-background');
+}
+break;
+case "font-family":
+$chapterContent.css('font-family', value);
+break;
+case "font-size":
+$chapterContent.css('font-size', value);
+break;
+case "line-height":
+$chapterContent.css('line-height', value);
+break;
+case "nav-bar":
+if ( value == 'open' ) {
+$('body').addClass('toggleNav');
+$('#container').addClass('active');
+$navBar.find('.glyphicon').removeClass('glyphicon-menu-up').addClass('glyphicon-menu-down');
+$navBar.addClass('active');
+} else {
+$navBar.removeClass('active');
+$('#container').removeClass('active');
+$navBar.find('.glyphicon').removeClass('glyphicon-menu-down').addClass('glyphicon-menu-up');
+$('body').removeClass('toggleNav');
+}
+break;
+case "fluid-switch":
+if (value == 'yes') {
+$chapter.removeClass('container');
+$chapter.addClass('container-fluid');
+} else {
+$chapter.addClass('container');
+$chapter.removeClass('container-fluid');
+}
+break;
+case "onebreak-switch":
+if (value == 'yes') {
+$chapterContent.html(removeLineBreak($chapterContent.html()));
+} else {
+$chapterContent.html(addLineBreak(chapterContent));
+}
+break;
+}
+}
+
+function saveStyle(style, value) {
+// Save to cookies
+var chapterStyle = getStyle();
+
+switch (style) {
+case "background":
+chapterStyle.background = value;
+break;
+case "font-family":
+chapterStyle.fontFamily = value;
+break;
+case "font-size":
+chapterStyle.fontSize = value;
+break;
+case "line-height":
+chapterStyle.lineHeight = value;
+break;
+case "nav-bar":
+chapterStyle.navBar = value;
+break;
+case "fluid-switch":
+chapterStyle.fluidSwitch = value;
+break;
+case "onebreak-switch":
+chapterStyle.onebreakSwitch = value;
+break;
+}
+var expDate = new Date();
+expDate.setTime(expDate.getTime() + (7 * 24 * 60 * 60 * 1000));
+$.cookie("chapter_style", JSON.stringify(chapterStyle), {path: '/', expires: expDate});
+var settings = {
+style: chapterStyle
+};
+$.ajax({
+method: "POST",
+url: ajaxUserSettingsUrl,
+data: {
+settings: JSON.stringify(settings)
+}
+}).done(function (data) {
+console.log(data);
+});
+}
+
+function addLineBreak(content) {
+var delimiter = '</p>';
+if (content.indexOf(delimiter) == -1 || content.indexOf('<br/>') > 5 || content.indexOf('<br>') > 5) {
+delimiter = '<br/>';
+if (content.indexOf(delimiter) == -1) {
+delimiter = '<br>';
+}
+}
+var contentArray = content.split(delimiter);
+if (contentArray.length == 1) return content;
+var newContent = '';
+for (var i in contentArray) {
+var contentItem = contentArray[i].trim();
+if (contentItem != '<p>') {
+newContent += contentItem;
+newContent += '<br>';
+}
+}
+newContent = newContent.replace(/(<br\s*\/?>){1,}/gi, '<br>');
+newContent = newContent.replace(/<p><br><br><\/p>/gi, '');
+return newContent;
+}
+
+function removeLineBreak(content) {
+var newContent = content;
+newContent = newContent.replace(/(<br\s*\/?>){1,}/gi, '');
+return newContent;
+}
+
+function getStyle() {
+var chapterStyle = $.cookie("chapter_style");
+if (chapterStyle) {
+chapterStyle = JSON.parse(chapterStyle);
+} else {
+chapterStyle = {};
+}
+if (!chapterStyle.background) chapterStyle.background = "#F4F4F4";
+if (!chapterStyle.fontFamily) chapterStyle.fontFamily = "Arial, sans-serif";
+if (!chapterStyle.fontSize) chapterStyle.fontSize = "18px";
+if (!chapterStyle.lineHeight) chapterStyle.lineHeight = "160%";
+if (!chapterStyle.fluidSwitch) chapterStyle.fluidSwitch = 'no';
+if (!chapterStyle.onebreakSwitch) chapterStyle.onebreakSwitch = 'no';
+if (!chapterStyle.navBar) chapterStyle.navBar = 'close';
+return chapterStyle;
+}
+
+var chapterStyle = getStyle();
+$optionBackground.val(chapterStyle.background);
+$optionFontFamily.val(chapterStyle.fontFamily);
+$optionFontSize.val(chapterStyle.fontSize);
+$optionLineHeight.val(chapterStyle.lineHeight);
+if (chapterStyle.navBar == 'open') {
+//$('body').addClass('toggleNav');
+//                $('#container').addClass('active');
+//                $navBar.find('.glyphicon').removeClass('glyphicon-menu-up').addClass('glyphicon-menu-down');
+//                $navBar.addClass('active');
+//                $('header').hide();
+//                $('.navbar-breadcrumb').hide();
+}
+$optionFluidSwitch.val([chapterStyle.fluidSwitch]);
+$optionNoLineBreak.val([chapterStyle.onebreakSwitch]);
+//changeStyle('onebreak-switch', chapterStyle.onebreakSwitch);
+
+// TODO: Chapter Nav
+$('.chapter_jump').on('change', function() {
+window.location = $(this).val();
+});
+
+// TODO: Novel history
+var novel = {
+id: 835,
+name: 'Trash of the Count&#039;s Family',
+url: '/trash-of-the-counts-family.html',
+chapter: {
+id: 1092467,
+name: 'Chapter 638: The Greatest Inn Overflowing with Hope and Love 5',
+url: '/trash-of-the-counts-family/chapter-638-the-greatest-inn-overflowing-with-hope-and-love-5.html',
+}
+};
+
+jQuery(document).ready(function () {
+var limit = 10;
+var novels = $.cookie("novels_history");
+if (novels) novels = JSON.parse(novels);
+else novels = [];
+
+for (var i in novels) {
+var nv = novels[i];
+if (nv.id == novel.id) {
+novels.splice(i, 1);
+break;
+}
+}
+
+if (novels.length == limit) {
+novels.splice(-1,1);
+}
+novels.unshift(novel);
+
+var expDate = new Date();
+expDate.setTime(expDate.getTime() + (7 * 24 * 60 * 60 * 1000));
+$.cookie("novels_history", JSON.stringify(novels), {path: '/', expires: expDate});
+});
+
+$('#chapter_error').on('click', function() {
+console.log('chapter_error');
+var reason = prompt("Please describe error", "");
+if (reason != null) {
+$.ajax({
+method: "GET",
+url: ajaxReportChapterUrl,
+data: {
+chapter: $(this).data('chapter-id'),
+reason: reason
+}
+}).done(function (data) {
+console.log(data);
+});
+alert('Thanks report');
+}
+});
+
+chapterJump(novel.id, novel.chapter.id, novel.chapter.url);
+});
+</script><link rel="stylesheet" href="/web/css/style.css"><link rel="stylesheet" href="/web/css/rateit.css"><link rel="stylesheet" href="/web/css/custom.css"><link rel="stylesheet" href="/web/css/responsive.css"></head><body><div id="wrapper"><header class="header" style="display: block"><div class="navbar navbar-default navbar-static-top" role="navigation" id="nav"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Show menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><h5><a class="header-logo" href="/"
+title="Read novel online"><img src="/uploads/thumbs/banner-75b2b7a774-e3b318a6dc29b96947534819abc91cd3.png"></a></h5></div><div class="navbar-collapse collapse"><ul class="control nav navbar-nav "><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><span class="glyphicon glyphicon-list"></span> Novel List <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/latest-release-novel"
+title="Latest Release">Latest Release</a></li><li><a href="/hot-novel"
+title="Hot Novel">Hot Novel</a></li><li><a href="/completed-novel"
+title="Completed Novel">Completed Novel</a></li><li><a href="/most-popular"
+title="Most Popular">Most Popular</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><span class="glyphicon glyphicon-list"></span> Genre <span class="caret"></span></a><div class="dropdown-menu multi-column"><div class="row"><div class="col-md-4"><ul class="dropdown-menu"><li><a href="/genre/Shounen"
+title="Shounen">Shounen</a></li><li><a href="/genre/Harem"
+title="Harem">Harem</a></li><li><a href="/genre/Comedy"
+title="Comedy">Comedy</a></li><li><a href="/genre/Martial+Arts"
+title="Martial Arts">Martial Arts</a></li><li><a href="/genre/School+Life"
+title="School Life">School Life</a></li><li><a href="/genre/Mystery"
+title="Mystery">Mystery</a></li><li><a href="/genre/Shoujo"
+title="Shoujo">Shoujo</a></li><li><a href="/genre/Romance"
+title="Romance">Romance</a></li><li><a href="/genre/Sci-fi"
+title="Sci-fi">Sci-fi</a></li><li><a href="/genre/Gender+Bender"
+title="Gender Bender">Gender Bender</a></li><li><a href="/genre/Mature"
+title="Mature">Mature</a></li><li><a href="/genre/Fantasy"
+title="Fantasy">Fantasy</a></li></ul></div><div class="col-md-4"><ul class="dropdown-menu"><li><a href="/genre/Horror"
+title="Horror">Horror</a></li><li><a href="/genre/Drama"
+title="Drama">Drama</a></li><li><a href="/genre/Tragedy"
+title="Tragedy">Tragedy</a></li><li><a href="/genre/Supernatural"
+title="Supernatural">Supernatural</a></li><li><a href="/genre/Ecchi"
+title="Ecchi">Ecchi</a></li><li><a href="/genre/Xuanhuan"
+title="Xuanhuan">Xuanhuan</a></li><li><a href="/genre/Adventure"
+title="Adventure">Adventure</a></li><li><a href="/genre/Action"
+title="Action">Action</a></li><li><a href="/genre/Psychological"
+title="Psychological">Psychological</a></li><li><a href="/genre/Xianxia"
+title="Xianxia">Xianxia</a></li><li><a href="/genre/Wuxia"
+title="Wuxia">Wuxia</a></li><li><a href="/genre/Historical"
+title="Historical">Historical</a></li></ul></div><div class="col-md-4"><ul class="dropdown-menu"><li><a href="/genre/Slice+of+Life"
+title="Slice of Life">Slice of Life</a></li><li><a href="/genre/Seinen"
+title="Seinen">Seinen</a></li><li><a href="/genre/Lolicon"
+title="Lolicon">Lolicon</a></li><li><a href="/genre/Adult"
+title="Adult">Adult</a></li><li><a href="/genre/Josei"
+title="Josei">Josei</a></li><li><a href="/genre/Sports"
+title="Sports">Sports</a></li><li><a href="/genre/Smut"
+title="Smut">Smut</a></li><li><a href="/genre/Mecha"
+title="Mecha">Mecha</a></li><li><a href="/genre/Yaoi"
+title="Yaoi">Yaoi</a></li><li><a href="/genre/Shounen+Ai"
+title="Shounen Ai">Shounen Ai</a></li><li><a href="/genre/History"
+title="History">History</a></li><li><a href="/genre/Martial"
+title="Martial">Martial</a></li></ul></div></div></div></li><li class="dropdown" id="options"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"
+aria-expanded="false"><span class="glyphicon glyphicon-cog"></span> Options <span
+class="caret"></span></a><div class="dropdown-menu dropdown-menu-right settings"><form class="form-horizontal"><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label" for="truyen-background">Background</label><div class="col-sm-5 col-md-7"><select class="form-control" id="option-background"><option value="#F4F4F4">Light gray</option><option value="#E9EBEE">Light blue</option><option value="#F4F4E4">Light yellow</option><option value="#EAE4D3">Sepia</option><option value="#D5D8DC">Dark blue</option><option value="#FAFAC8">Dark yellow</option><option value="#EFEFAB">Wood grain</option><option value="#FFF">White</option><option value="#232323">Dark</option></select></div></div><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label"
+for="font-chu">Font family</label><div class="col-sm-5 col-md-7"><select class="form-control"
+id="option-font-family"><option value="'Palatino Linotype', serif">Palatino Linotype</option><option value="Bookerly, serif">Bookerly</option><option value="Minion, serif">Minion</option><option value="'Segoe UI', sans-serif">Segoe UI</option><option value="Roboto, sans-serif">Roboto</option><option value="'Roboto Condensed', sans-serif">Roboto Condensed</option><option value="'Patrick Hand', sans-serif">Patrick Hand</option><option value="'Noticia Text', sans-serif">Noticia Text</option><option value="'Times New Roman', serif">Times New Roman</option><option value="Verdana, sans-serif">Verdana</option><option value="Tahoma, sans-serif">Tahoma</option><option value="Arial, sans-serif">Arial</option></select></div></div><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label" for="size-chu">Font size</label><div class="col-sm-5 col-md-7"><select class="form-control" id="option-font-size"><option value="16px">16</option><option value="18px">18</option><option value="20px">20</option><option value="22px">22</option><option value="24px">24</option><option value="26px">26</option><option value="28px">28</option><option value="30px">30</option><option value="32px">32</option><option value="34px">34</option><option value="36px">36</option><option value="38px">38</option><option value="40px">40</option></select></div></div><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label" for="line-height">Line
+height</label><div class="col-sm-5 col-md-7"><select class="form-control" id="option-line-height"><option value="100%">100%</option><option value="120%">120%</option><option value="140%">140%</option><option value="160%">160%</option><option value="180%">180%</option><option value="200%">200%</option></select></div></div><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label">Full frame</label><div class="col-sm-5 col-md-7"><label class="radio-inline" for="fluid-yes"><input type="radio" name="fluid-switch" id="fluid-yes" value="yes"> Yes</label><label class="radio-inline" for="fluid-no"><input type="radio" name="fluid-switch" id="fluid-no" value="no"
+checked=""> No</label></div></div><div class="form-group form-group-sm"><label class="col-sm-2 col-md-5 control-label">No line break</label><div class="col-sm-5 col-md-7"><label class="radio-inline" for="onebreak-yes"><input type="radio" name="onebreak-switch" id="onebreak-yes"
+value="yes"> Yes</label><label class="radio-inline" for="onebreak-no"><input type="radio" name="onebreak-switch" id="onebreak-no" value="no"
+checked=""> No</label></div></div></form></div></li></ul><form class="navbar-form navbar-right"
+action="/search"><div class="input-group search-holder"><input class="form-control" id="search-input" type="search"
+name="keyword" placeholder="Search..."
+value=""><div class="input-group-btn"><button class="btn btn-default" type="submit"><span
+class="glyphicon glyphicon-search"></span></button></div></div><div class="list-group list-search-res hide"></div></form><div id="login-status" class="hide"></div></div><!--/.nav-collapse --></div></div></header><main id="container" class=" "
+style="background-color: #F4F4F4"><div class="navbar-breadcrumb" style="display: block"><div class="container breadcrumb-container"><ol class="breadcrumb"><li><a href=""><span class="glyphicon glyphicon-home"></span></a><a href="/" title="Read novel online"><span>Novel</span></a></li><li><h1><a href="/trash-of-the-counts-family.html" title="Trash of the Count's Family"><span>Trash of the Count's Family</span></a></h1></li><li class="active"><a href="/trash-of-the-counts-family/chapter-638-the-greatest-inn-overflowing-with-hope-and-love-5.html"
+title="Chapter 638: The Greatest Inn Overflowing with Hope and Love 5"><span>Chapter 638: The Greatest Inn Overflowing with Hope and Love 5</span></a></li></ol></div></div><div id="chapter" class="chapter container"><div class="row"><div class="col-xs-12"><a class="truyen-title" href="/trash-of-the-counts-family.html" title="Trash of the Count's Family">Trash of the Count's Family</a><h2><a class="chapter-title" href="/trash-of-the-counts-family/chapter-638-the-greatest-inn-overflowing-with-hope-and-love-5.html" title="Chapter 638: The Greatest Inn Overflowing with Hope and Love 5"><span class="chapter-text">Chapter 638: The Greatest Inn Overflowing with Hope and Love 5<span></a></h2><hr class="chapter-start"><button type="button" class="btn btn-responsive btn-success toggle-nav-open "><span class="glyphicon glyphicon-menu-up"></span></button><div class="chapter-nav" id="chapter-nav-top"><div class="btn-group"><a class="btn btn-success" href="/trash-of-the-counts-family/chapter-637-the-greatest-inn-overflowing-with-hope-and-love-4.html"
+title="Chapter 637: The Greatest Inn Overflowing with Hope and Love 4"
+id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span><span class="hidden-xs">Prev Chapter</span></a><button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button><a class="btn btn-success" href="/trash-of-the-counts-family/chapter-639-are-you-scared-1.html"
+title="Chapter 639: Are you scared? 1"
+id="next_chap"><span class="hidden-xs">Next Chapter</span><span class="glyphicon glyphicon-chevron-right"></span></a></div></div><hr class="chapter-end"><div id="chapter-content" class="chapter-c" style="font-family: Arial, sans-serif, serif; font-size: 18px; line-height: 160%;"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- full thich ung --><ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="2009706278"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><p></p><p></p><p></p><p><h4>Chapter 638: The Greatest Inn Overflowing with Hope and Love 5</h4></p><p>There was an extremely large plaza in front of the Sez Royal Academy.</p><p>In an alleyway just outside that plaza…</p><p>“What’s wrong? Does it feel weird?”</p><p>On touched her hair at Cale’s question.</p><p>Cale was here looking like Duke Fredo’s son, young master Naru, while On was in her human form.</p><p>However, they both looked different from their usual appearances.</p><p>– I used the dye spell really well!</p><p>Both of their hairs were as red as the sunset.</p><p>“You don’t like it?”</p><p>On immediately shook her head at Cale’s question.</p><p>“I like it, nya!”</p><p>On had subconsciously touched her hair because she liked the fact that it was the same red as Cale’s hair right now.</p><p>But it was also true that her mind was a bit of a mess.</p><p>The Fog Cat Tribe.</p><p>On and Hong were the former tribe leader’s only remaining bloodline.</p><p>However, Hong had been On’s only family member for as long as she could remember.</p><p>The Fog Cat Tribe only ignored them and kept them under surveillance while calling them mutants and trash.</p><p>On had realized that she and Hong were originally the true successors to the leader position because they monitored them despite calling the two of them trash.</p><p>She then found an opening to grab Hong and run away.</p><p>She thought that doing so would be the only way they could survive.</p><p>And now… They were heading over to destroy that Fog Cat Tribe.</p><p>‘…Maybe I’ll be able to learn the details.’</p><p>She might be able to learn more about herself and her brother.</p><p>On frowned.</p><p>It was at that moment.</p><p>“You don’t need to think that hard about it.”</p><p>On raised her head after hearing a stoic yet gentle voice.</p><p>Cale, who was about her height in this appearance, was looking forward.</p><p>“I will take care of everything. On, you just do whatever you want to do. Just think about doing that.”</p><p>Cale recalled the time he met the leader of the Fog Cat Tribe outside Sheritt’s castle in one of the Three Restricted Areas.</p><p>He was recalling the things the leader had said while looking at On and Hong.</p><p>‘They are the last of that bloodline, so they must have been persistent. But I didn’t know they were on Cale Henituse’s side. Is that why we didn’t find them?’</p><p>‘That dirty blood needs to disappear from the world.’</p><p>On had said that the current leader was not her family member.</p><p>‘On and Hong probably has the bloodline of the former tribe leader. The current leader must be the one who pushed the former out of the position.’</p><p>And most likely…</p><p>‘That current leader bastard might have killed On and Hong’s family when he took the position.’</p><p>However, he kept On and Hong alive.</p><p>That was what Cale could not figure out.</p><p>‘Did he keep them alive because they were young?’</p><p>The Fog tribe was known for being the stealthiest tribe among the Cats.</p><p>Being the stealthiest meant that they were the strongest of the Cats.</p><p>Only a select few within the Fog Cat Tribe had special abilities.</p><p>‘Like On and Hong.’</p><p>Cale reached his hand out and ruffled On’s hair.</p><p>“By the way…”</p><p>On could see Cale looking at her.</p><p>“Do you want to go to an academy?”</p><p>On flinched.</p><p>– Human! I don’t want to go to an academy! I am already an extremely strong and great and mighty Dragon! I’m just going to have fun with you, human! We’re going to travel the world!</p><div class="ads ads-holder ads-middle text-center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="8264086020"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>Cale just ignored Raon’s voice as usual.</p><p>It was at that moment.</p><p>Dang- dang dang- dang—</p><p>The bell on the Sez Royal Academy’s bell tower was ringing.</p><p>It was the sign that it was now 10 am.</p><p>One hour.</p><p>It also signaled that only one hour was left until the king’s speech.</p><p>Cale did not have time to hear On’s response.</p><p>They needed to start moving.</p><p>“Let’s talk about the academy later. Well, I’ll let you do whatever you want to do. I don’t care whether that is being a slacker or studying in an academy.”</p><p>Cale didn’t think much about it and shared his thoughts before stepping out of the alley.</p><p>He then turned around and motioned to On.</p><p>“Are you not coming?”</p><p>On looked at Cale, who looked like young master Naru right now, before recalling the first time they met Cale when he had given them food.</p><p>It was said that a person goes through three times of luck during their lives.</p><p>On was certain that the day she met Cale was one of those times for her.</p><p>That was the day she had found a family.</p><p>On heard Raon’s voice in her head at that moment.</p><p>– Fighting! And don’t worry! I’m going to be invisible and following you guys! You won’t get hurt!</p><p>On started to smile after hearing her youngest dongsaeng’s bright voice.</p><p>She decided to stop thinking about it.</p><p>She just had to do whatever she wanted to do as Cale had mentioned.</p><p>– …Y, you look like the human when you smile like that! Are you planning on scamming someone? Tell me! I want to do it with you!</p><p>On’s smile grew wider at Raon’s comments before she walked toward Cale.</p><p>The two of them headed for the main gate of the Sez Royal Academy.</p><p>The way there was quite loud.</p><p>“Please step back! His majesty will only appear at 11 am!”</p><p>“Please stay in a single file line! We will kick all of you out if you don’t line up properly!”</p><p>People from the academy and the palace were shouting everywhere.</p><p>It could not be helped.</p><p>“Oh, come on, let me go to the front too!”</p><p>“Move, move!”</p><p>“Wow. Am I really going to see his majesty today? I’ll even be able to hear his speech?”</p><p>“Of course! This is the ideal spot!”</p><p>Numerous citizens of the kingdom were gathered at the plaza and forming a human wave.</p><p>This could not be helped as well.</p><p>“Mommy, his majesty is the strongest in the world, right?”</p><p>“Of course~ our kingdom is the land of knights. Our majesty is also a sword master!”</p><p>“That’s right! He’s the strongest knight!”</p><p>The current king, Bakehe.</p><p>He was a sword master in the land of knights.</p><p>He was a strong king. That was enough for his popularity to rise significantly, but he had done something else five years ago. He had created a new law as soon as he became king.</p><p>‘Create a training center to teach the way of the sword!’</p><p>Training centers where anybody could learn the way of the sword were created throughout the Sez Kingdom.</p><p>The palace covered all fees associated with the facilities.</p><p>‘A person’s identity or whether they are rich or poor will not matter! Make it so that anybody who wishes to learn will be able to learn!’</p><p>‘Send anyone with talent to the Reserve Knights Training Center and give them the support they need to reach their full potential!’</p><p>Current king Bakehe opened a path to becoming a knight for everyone and after five years, there were now people popping up who had gone from orphan to knight, a poor peasant to a successful knight, people here and there who had achieved their dreams.</p><div class="ads ads-holder ads-middle text-center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="8264086020"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>“…That’s why he’s quite popular.”</p><p>Cale was smiling while blending in with the crowd of people.</p><p>It was at that moment.</p><p>“Hmm? Why is an academy student over here?”</p><p>A person who made eye contact with Cale mumbled with confusion.</p><p>Cale’s expression instantly changed.</p><p>“Excuse me. Excuse me!”</p><p>He looked anxious and pretended as if he was trying his best to push his way through the crowd with On.</p><p>“One moment, please! We need to get inside! Excuse me, could you please move?!”</p><p>Cale’s pleading voice along with the uniform that symbolized his status as an academy student made everyone turn toward the two of them.</p><p>A knight in armor was frowning as he walked toward them.</p><p>“Over there! The student over there!”</p><p>Cale stopped walking.</p><p>He was smiling internally.</p><p>It would normally require a thorough identity search outside the academy gates to get inside.</p><p>‘But they can’t do that right now.’</p><p>The extremely popular king made it so that the entire plaza up to this gate was full of people.</p><p>It was making it difficult for the academy employees to work.</p><p>‘We would normally have to be checked out by an employee.’</p><p>Unfortunately, that might lead to their ruse being found out.</p><p>“Knight-nim!”</p><p>Cale grabbed the arm of the Sez Kingdom’s knight who was walking toward them with a stiff expression on his face.</p><p>The knight instantly started frowning.</p><p>These could be intruders posing as students.</p><p>“Why are you two-”</p><p>He could not finish speaking.</p><p>Plop!</p><p>A student ID and a doctor’s note were placed in his hand.</p><p>“We came out yesterday because I was sick! We really want to hear today’s speech. Is there any way we can get inside? Please?”</p><p>Cale put his hand on On’s shoulder.</p><p>“My sister’s dream is to become a knight! She really wanted to see his majesty… But she came out with me so that she could take care of me. Is there any way we can get inside?”</p><p>– Human, you’re so good at acting!</p><p>The knight still had a stiff expression while looking at this young boy with a look of desperation on his face, but his wariness was starting to subside.</p><p>‘…He looks very pale.’</p><p>It was because he was looking at a boy who was so pale, something that could not be faked with magic.</p><p>‘He looks young as well.’</p><p>Although magic could be used to dye hair or change different parts of the body, it could not be used to turn an adult into a child.</p><p>‘It is impossible unless there is a Dragon. And if there was a Dragon, it would be here to praise our majesty for his good deeds, not to harm him.’</p><p>He still needed to do this job.</p><p>King Bakehe was the Sez Kingdom’s greatest knight, but this knight still had to protect his liege.</p><p>“Follow me!”</p><p>He headed toward the gate with the sick-looking boy and his sister who was behind him.</p><p>“Please move back!”</p><p>“Back, move back!”</p><p>The gate was also extremely chaotic with people and the knight headed for a tent right outside the gate.</p><p>“These kids-”</p><p>The knight frowned after seeing that there were no employees inside the tent.</p><p>They must have all rushed out to organize the chaos.</p><p>“…There is a lot more activity than usual this year.’</p><p>There were more people than usual trying to push their way forward to see his majesty.</p><p>– Human! Bud’s mercenaries are doing a good job!</p><p>Those troublemakers were all camouflaged mercenaries.</p><p>“Ahem.”</p><p>The knight peeked to the side hoping that Cale wouldn’t have heard his mumbling.</p><div class="ads ads-holder ads-middle text-center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="8264086020"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>Cale put on an anxious but bright smile.</p><p>“I think everybody wants to hear his majesty’s speech as close to him as possible like we do. Right?”</p><p>“Yeah, oppa.”</p><p>– Wow! Both of you are so good at acting! Your acting is like the sky while Choi Han’s acting is down on the ground! Choi Han needs to practice!</p><p>The knight nodded his head after seeing this pair of siblings who seemed to have a very good relationship with each other.</p><p>“Alright, let me confirm a few things.”</p><p>He decided to do the check himself instead of waiting for an employee.</p><p>The knight headed over to multiple magic devices in the tent.</p><p>“We will check your student ID, followed by your aura and mana.”</p><p>They normally only used magic devices to check that the student IDs were real.</p><p>But they were checking for aura and mana today as well since the king was giving a speech. They wanted to prepare for any potential trouble.</p><p>“Put your student ID over here.”</p><p>“Yes, sir.”</p><p>Cale placed the ID on the magic device.</p><p>“Mm.”</p><p>It naturally said that it was real.</p><p>– Hehe. I slightly twisted the mana in the magic device!</p><p>It was thanks to their Dragon buddy Raon who had done something that was not easy to do at all.</p><p>They easily passed the mana and aura tests as well.</p><p>These two were On and Cale after all.</p><p>Both of their powers had nothing to do with aura or mana.</p><p>“Mm.”</p><p>The knight apologetically smiled at the siblings whose IDs were real and had no powers of any kind.</p><p>“Follow me.”</p><p>His tone of voice was much gentler as he led them far away from the main gate to a small side gate.</p><p>He could not open the main gate right now.</p><p>“Hmm? Vice Captain-nim? Who are these kids?”</p><p>The knights guarding the side gate noticed Cale and On and looked toward the knight who brought them here.</p><p>“I checked their identities. Their IDs were real and they didn’t have mana or aura.”</p><p>“Ah. Is that so?”</p><p>Those devices were made by the Sez Kingdom’s greatest mage.</p><p>Nobody would question the magic devices made by a highest-grade Royal Mage.</p><p>Only a Dragon would be able to mess with those devices.</p><p>And what reason would a Dragon have to mess with a small device that checks a student’s academy ID?</p><p>“Alright, head on inside.”</p><p>Cale bowed toward the knight.</p><p>“Thank you very much, knight-nim! I’ll be able to show something great to my sister thanks to your help!”</p><p>The knight chuckled after seeing the joy on the young boy’s face. On thanked the knight as well.</p><p>“Thank you very much, sir. I truly hope I can become a great knight like you, Vice Captain-nim.”</p><p>“Ahem, hem! It’s not like I did much. Hurry on inside! There are less than 30 minutes left!”</p><p>Cale and On respectfully bowed toward the embarrassed Vice Captain shooing them inside as well as the other knights before quickly starting to move.</p><p>“…They really do seem to be students. They’re moving through the extremely complicated pathways of the Sez Royal Academy that are difficult to navigate without a map with no hesitation.”</p><p>“That’s right. They seem to know exactly where they are going.”</p><p>The knights had no way of knowing that Cale had a clear map in his mind.</p><p>– Oh! Human, the buildings are all so pretty!</p><p>The buildings of the Sez Royal Academy were giving off a vintage feel that showed its long history as Raon mentioned.</p><p>However, Cale’s eyes were sharply looking around.</p><div class="ads ads-holder ads-middle text-center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="8264086020"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>“It’s over there.”</p><p>He was walking through the complicated streets with no hesitation until he arrived at the Academy’s plaza that was directly in front of the main gate.</p><p>The plaza floor was made of marble.</p><p>There was a high platform in the front.</p><p>“That is the king’s spot.’</p><p>There was an area for the nobles in front of the platform, followed by an area for the chief executives of the academy and then the rows of students.</p><p>The whole area was surrounded by knights and soldiers.</p><p>‘10 minutes.’</p><p>There were only 10 minutes left until the speech now.</p><p>“Hmm? Who are you guys?”</p><p>The knight in the rear frowned at them and Cale quickly bowed.</p><p>“I’m sorry, sir! We went to the restroom-”</p><p>“Shut it and hurry up and get in line!”</p><p>“Yes, sir!”</p><p>Cale grabbed On’s hand and stood at the back of the row of first-year students as if that had been his original spot.</p><p>“Stand in front of me.”</p><p>“…Okay.”</p><p>On stood in front of Cale and Cale looked around.</p><p>He heard Raon’s voice at that moment.</p><p>– Human! The Dragons have infiltrated with no problem!</p><p>Raon’s report continued.</p><p>– Grandpa Ron and Beacrox have made it in as well! The Molan household members are all here!</p><p>– Bud said that he made it through a dog hole so you don’t need to worry about him!</p><p>One, two. As his allies all made their ways inside using their own methods…</p><p>Boom- boom- boooooom-</p><p>He heard some drums before reverent music filled the plaza.</p><p>Waaaaaaaaaaaaaaaaaa-</p><p>He could also hear the cheering of the citizens from behind the gate.</p><p>Cale turned toward the platform.</p><p>A person was slowly walking to the top.</p><p>He was a beefy man.</p><p>He was someone who had always kept his sword on him and looked after the kingdom in full armor from the moment he became king.</p><p>This was the Sez Kingdom’s greatest knight.</p><p>The Sez Kingdom’s sword master.</p><p>The king who had given opportunities to his people and showed his benevolence.</p><p>This was the man known as King Bakehe.</p><p>A magical fog slowly started to descend from the holy Mount Nex the moment he became king five years ago and started covering the entire mountain this year.</p><p>The citizens of the kingdom cheered that a new legend was starting with their king.</p><p>However, Cale had realized something the moment he heard about that.</p><p>‘This bastard.’</p><p>The king walking up to the platform right now…</p><p>‘That bastard allied with the White Star before he even became king.’</p><p>He must have handed Mount Nex over to the White Star once he became king.</p><p>The White Star would have used the Fog Cat Tribe to slowly turned Mount Nex into a place for him.</p><p>‘Once that fog covered the entire mountain today must have been when the Fog Cat Tribe moved over.’</p><p>Duke Fredo had said that the entire stone mountain was a place to imprison the sacrifices.</p><p>Booooom Boom- boom–!</p><p>The king finally arrived at the top of the platform and looked down toward the crowd.</p><p>The music stopped and everyone bowed to show their respect to the king.</p><p>The king started to speak with his voice being amplified through magic amplification devices to spread throughout the academy and the plaza outside.</p><p>“Everybody raise your heads.”</p><p>Cale raised his head and whispered to On in front of him.</p><p>“On. Spread your fog.”</p><p>On nodded her head and Cale started to smile with anticipation.</p><p>Slowly…</p><p>White fog was slowly starting to appear without people noticing.</p><div class="ads ads-holder ads-middle text-center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-2371791870283090"
+data-ad-slot="8264086020"></ins><script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><p>Once this white fog covered where Cale was standing and the platform…</p><p>That is when everything would start.</p><p>That time quickly arrived.</p><p>“Hmm? What the heck?”</p><p>Once the people in the back noticed the fog creeping in…</p><p>“Strongly.”</p><p>Cale gave the order.</p><p>On and Raon answered back.</p><p>“That’s easy, nya.”</p><p>– I’m getting started too!</p><p>Shaaaaaaaaaaa-</p><p>There was a sudden gust of wind and the fog burst in size before charging forward as if it was going to gobble up the platform with the king.</p><p>Swooooooosh-</p><p>Wind whirled around Cale’s ankles at that moment and his body followed the fog toward the platform.</p><p>His goal was to capture King Bakehe alive.</p><p>—</p><p>Translator’s Comments</p><p>GET THE KING. GET THE KING.</p><p>What will happen next?</p><div  align="left">
+If you find any errors ( broken links, non-standard content, etc.. ), Please let us know < report chapter > so we can fix it as soon as possible. </div></div><hr class="chapter-end"><div class="chapter-nav" id="chapter-nav-top"><div class="btn-group"><a class="btn btn-success" href="/trash-of-the-counts-family/chapter-637-the-greatest-inn-overflowing-with-hope-and-love-4.html"
+title="Chapter 637: The Greatest Inn Overflowing with Hope and Love 4"
+id="prev_chap"><span class="glyphicon glyphicon-chevron-left"></span><span class="hidden-xs">Prev Chapter</span></a><button type="button" class="btn btn-success chapter_jump"><span class="glyphicon glyphicon-list-alt"></span></button><a class="btn btn-success" href="/trash-of-the-counts-family/chapter-639-are-you-scared-1.html"
+title="Chapter 639: Are you scared? 1"
+id="next_chap"><span class="hidden-xs">Next Chapter</span><span class="glyphicon glyphicon-chevron-right"></span></a></div></div><div class="text-center"><button type="button" class="btn btn-warning" id="chapter_error" data-chapter-id="1092467"><span class="glyphicon glyphicon-exclamation-sign"></span> Report chapter
+</button><!--    <button type="button" class="btn btn-info" id="chapter_comment">--><!--        <span class="glyphicon glyphicon-comment"></span> Comment--><!--    </button>--></div><div class="bg-info text-center visible-md visible-lg box-notice">
+Tip: You can use left, right, A and D keyboard keys to browse between chapters.
+</div><div class="col-xs-12"></div><script data-ad-client="ca-pub-2371791870283090" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></div></div></div></main><footer class="footer"><div class="container"><div class="hidden-xs col-sm-5"><p>
+&copy; Copyright NovelFull.Com. All Rights Reserved.</p></div><ul class="col-xs-12 col-sm-7 list-unstyled"><li class="text-right pull-right"><a href="/contact" title="Contact">Contact</a> -
+<a href="/tos" title="ToS">ToS</a> -
+<a href="/sitemap.xml" target="_blank">Sitemap</a><a
+class="backtop" href="#" rel="nofollow" title=""><span
+class="glyphicon glyphicon-upload"></span></a></li></ul></div></footer></div></body><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-101484867-2"></script><script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-101484867-2');
+</script></html>
+BUILD SUCCESSFUL in 3s
+21 actionable tasks: 4 executed, 17 up-to-date
+10:14:27 PM: Tasks execution finished ':app:cleanTestDebugUnitTest :app:testDebugUnitTest --tests "com.alight.reading.WebsiteBookTest.parseTrashCount"'.
