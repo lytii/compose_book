@@ -3,6 +3,7 @@ package com.compose.book.ui.composable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
@@ -13,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import com.compose.book.data.Paragraph
 
 @Composable
-fun ChapterCompose(list: List<Paragraph>, onNext: () -> Unit) {
-    LazyColumn {
+fun ChapterCompose(list: List<Paragraph>, scrollState: LazyListState, onNext: () -> Unit) {
+    LazyColumn(state = scrollState) {
         item { Navigation(onNext) }
         items(list) { s ->
             Column(modifier = Modifier.padding(all = 4.dp)) {
