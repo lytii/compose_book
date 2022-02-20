@@ -209,6 +209,8 @@ fun String.toParagraph(index: Int) = Paragraph(
 )
 @Composable
 fun DefaultPreview() {
+    MyApp(paragraphs, {}) {}
+
     ComposeBookTheme {
         Column {
             ChapterCompose(list = paragraphs, rememberLazyListState(), {})

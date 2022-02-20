@@ -9,7 +9,7 @@ data class Chapter(
     val chapterTitle: String,
     val chapterUrl: String,
     val bookId: Int,
-    val index: Int,
+    val chapterIndex: Int,
     @PrimaryKey
     val chapterId: Int = chapterUrl.hashCode(),
     var isCached: Boolean = false
@@ -28,7 +28,7 @@ data class Chapter(
 
     override fun toString(): String {
         return "Chapter(" +
-                "index='$index',"+
+                "index='$chapterIndex',"+
                 "chapterTitle='$chapterTitle', " +
                 "chapterUrl='$chapterUrl', " +
                 "chapterId=$chapterId, " +

@@ -4,10 +4,10 @@ import androidx.annotation.VisibleForTesting
 import okhttp3.ResponseBody
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import timber.log.Timber
 
 object TrashFamily {
-    val demoChapterUrl = "https://novelfull.com/trash-of-the-counts-family/chapter-715-are-you-sure-that-youre-a-god-2.html"
+    val demoChapterUrl =
+        "https://novelfull.com/trash-of-the-counts-family/chapter-715-are-you-sure-that-youre-a-god-2.html"
 
     private val name = this.javaClass.simpleName
     val chapterListUrl =
@@ -21,7 +21,7 @@ object TrashFamily {
                 Chapter(
                     chapterTitle = it.text(),
                     chapterUrl = it.attr("value"),
-                    index = index,
+                    chapterIndex = index,
                     bookId = bookId
                 )
             }
@@ -53,7 +53,7 @@ object TrashFamily {
         val prev = nav.select("#prev_chap").attr("href")
 
         return Chapter(
-            index = chapter.index,
+            chapterIndex = chapter.chapterIndex,
             chapterTitle = list[0].toString(),
             chapterUrl = chapterListUrl,
             bookId = bookId
@@ -67,6 +67,12 @@ object TrashFamily {
     fun parseChapter(index: Int, responseBody: ResponseBody): List<Paragraph> {
         return Jsoup.parse(responseBody.string())
             .parseParagraphs()
+    }
+
+    fun parseChapterParagraphs(chapter: Chapter, responseBody: ResponseBody): Chapter {
+        chapter.paragraphs = Jsoup.parse(responseBody.string())
+            .parseParagraphs()
+        return chapter
     }
 
     fun Document.parseParagraphs(): List<Paragraph> {

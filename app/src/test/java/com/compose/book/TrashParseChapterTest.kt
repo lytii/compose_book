@@ -43,7 +43,7 @@ class TrashCountUnitTest {
             chapterTitle = "title",
             chapterUrl = "url",
             bookId = TrashFamily.bookId,
-            index = 637
+            chapterIndex = 637
         )
         val parse: Document = Jsoup.parse(file, "UTF-8")
 
@@ -64,7 +64,7 @@ class TrashCountUnitTest {
             chapterTitle = "title",
             chapterUrl = "url",
             bookId = TrashFamily.bookId,
-            index = 637
+            chapterIndex = 637
         )
         val parse: Document = Jsoup.parse(file, "UTF-8")
 
