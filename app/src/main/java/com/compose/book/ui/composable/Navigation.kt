@@ -11,13 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Navigation(onNext: () -> Unit) {
+fun Navigation(onSelect: () -> Unit, onNext: () -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
         horizontalArrangement = Arrangement.Center,
     ) {
-        Button(onClick = { /*TODO*/ }) {
-            Text(text = "List")
+        Button(onClick = onSelect) {
+            Text(text = "Select")
         }
         Button(onClick = onNext) {
             Text(text = "Next")

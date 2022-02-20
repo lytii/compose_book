@@ -3,21 +3,23 @@ package com.compose.book
 import android.annotation.SuppressLint
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.LocalTextStyle
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusTarget
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.compose.book.data.BookApi
@@ -35,6 +37,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 const val DEFAULT_INDEX = 88
+
 class MainActivity : ComponentActivity() {
 
     @Inject
@@ -69,6 +72,12 @@ class MainActivity : ComponentActivity() {
         setChapter(currentIndex)
     }
 
+    fun onSelect(index: Int) {
+        Timber.d("select $index")
+        getPreferences(MODE_PRIVATE).edit().putInt(INDEX, index).apply()
+        setChapter(index)
+    }
+
     @SuppressLint("CheckResult")
     fun setChapter(currentIndex: Int) {
         Timber.d("setChapter: $currentIndex")
@@ -90,31 +99,77 @@ class MainActivity : ComponentActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ p ->
-                setContent { MyApp(p) { onNextClicked() } }
+                setContent { MyApp(p, ::onSelect) { onNextClicked() } }
             },
                 { e -> Timber.e(e, "networkParagraphs") })
     }
 }
 
 @Composable
-fun MyApp(p: List<Paragraph>, onNextClicked: () -> Unit) {
+fun MyApp(p: List<Paragraph>, onSelect: (Int) -> Unit, onNextClicked: () -> Unit) {
     ComposeBookTheme {
         // A surface container using the 'background' color from the theme
         Surface(color = MaterialTheme.colors.background) {
             val scrollState = rememberLazyListState()
             val coroutineScope = rememberCoroutineScope()
-            Content(p, scrollState) {
-                coroutineScope.launch { scrollState.scrollToItem(0) }
-                onNextClicked()
-            }
+            val selectChapterState = remember { mutableStateOf(false) }
+
+            Content(
+                list = p,
+                scrollState = scrollState,
+                onSelectChapterClicked = { selectChapterState.value = true },
+                onNextClicked = {
+                    coroutineScope.launch { scrollState.scrollToItem(0) }
+                    onNextClicked()
+                }
+            )
+            SelectChapterDialog(onSelect, selectChapterState)
         }
     }
 }
 
 @Composable
-fun Content(list: List<Paragraph>, scrollState: LazyListState, onNextClicked: () -> Unit) {
+fun SelectChapterDialog(onSelect: (Int) -> Unit, isDialogOpen: MutableState<Boolean>) {
+    val input = remember { mutableStateOf(-1) }
+    if (isDialogOpen.value) {
+        AlertDialog(
+            title = { Text("Select Chapter #") },
+            text = { SelectChapterInput(input, onSelect) },
+            onDismissRequest = { isDialogOpen.value = false },
+            confirmButton = {
+                Button({
+                    isDialogOpen.value = false
+                    onSelect(input.value - 1)
+                    input.value = -1
+                }) { Text("Go To") }
+            }
+        )
+    }
+}
+
+@Composable
+fun SelectChapterInput(input: MutableState<Int>, onSelect: (Int) -> Unit) {
+    Row {
+        TextField(
+            value = if (input.value == -1) "" else input.value.toString(),
+            modifier = Modifier.focusTarget(),
+            onValueChange = { input.value = if (it.isNotBlank()) it.toInt() else -1 },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            keyboardActions = KeyboardActions(onDone = { onSelect(input.value) })
+        )
+    }
+}
+
+@Composable
+fun Content(
+    list: List<Paragraph>,
+    scrollState: LazyListState,
+    onSelectChapterClicked: () -> Unit,
+    onNextClicked: () -> Unit
+) {
     LazyColumn(state = scrollState) {
-        item { Navigation(onNextClicked) }
+        item { Navigation(onSelectChapterClicked, onNextClicked) }
         items(list) { s ->
             Column(modifier = Modifier.padding(all = 4.dp)) {
                 Text(
@@ -124,7 +179,7 @@ fun Content(list: List<Paragraph>, scrollState: LazyListState, onNextClicked: ()
                 )
             }
         }
-        item { Navigation(onNextClicked) }
+        item { Navigation(onSelectChapterClicked, onNextClicked) }
     }
 }
 
