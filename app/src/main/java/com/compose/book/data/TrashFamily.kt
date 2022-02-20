@@ -22,7 +22,7 @@ object TrashFamily {
                     chapterTitle = it.text(),
                     chapterUrl = it.attr("value"),
                     index = index,
-                    bookId = name.hashCode()
+                    bookId = bookId
                 )
             }
 

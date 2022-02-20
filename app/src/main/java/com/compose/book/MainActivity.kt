@@ -81,10 +81,8 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("CheckResult")
     fun setChapter(currentIndex: Int) {
         Timber.d("setChapter: $currentIndex")
-        // get list of chapters
-        val getList = db
+        val getListOfChapters = db
             .getChapterList(TrashFamily.bookId)
-            .filter { it.isNotEmpty() }
             .switchIfEmpty(
                 api.getChapter(TrashFamily.chapterListUrl)
                     .map { TrashFamily.parseChapterListUrls(it) }
@@ -92,7 +90,7 @@ class MainActivity : ComponentActivity() {
             )
 
         // display current chapter
-        getList
+        getListOfChapters
             .map { it[currentIndex] }
             .flatMap { api.getChapter(it.chapterUrl) }
             .map { TrashFamily.parseChapter(currentIndex, it) }
