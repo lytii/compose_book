@@ -3,23 +3,30 @@ package com.compose.book
 import android.annotation.SuppressLint
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.compose.book.data.BookApi
 import com.compose.book.data.BookDB
 import com.compose.book.data.Paragraph
 import com.compose.book.data.TrashFamily
 import com.compose.book.di.DaggerActivityComponent
 import com.compose.book.ui.composable.ChapterCompose
+import com.compose.book.ui.composable.Navigation
 import com.compose.book.ui.theme.ComposeBookTheme
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -27,7 +34,9 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+const val DEFAULT_INDEX = 88
 class MainActivity : ComponentActivity() {
+
     @Inject
     lateinit var db: BookDB
 
@@ -36,7 +45,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Timber.plant(Timber.DebugTree())
         val component = DaggerActivityComponent.builder()
             .bindContext(this)
             .build()
@@ -48,21 +57,21 @@ class MainActivity : ComponentActivity() {
     fun networkParagraphs() {
 //        getPreferences(MODE_PRIVATE).edit().putInt(INDEX, 714).apply()
         // get current chapter index
-        val currentIndex = getPreferences(MODE_PRIVATE).getInt(INDEX, 33)
-        Log.d("main","networkParagraphs: $currentIndex")
+        val currentIndex = getPreferences(MODE_PRIVATE).getInt(INDEX, DEFAULT_INDEX)
+        Timber.d("networkParagraphs: $currentIndex")
         setChapter(currentIndex)
     }
 
     fun onNextClicked() {
-        Log.d("main","onNextClicked: ")
-        val currentIndex = getPreferences(MODE_PRIVATE).getInt(INDEX, 33) + 1
+        Timber.d("onNextClicked: ")
+        val currentIndex = getPreferences(MODE_PRIVATE).getInt(INDEX, DEFAULT_INDEX) + 1
         getPreferences(MODE_PRIVATE).edit().putInt(INDEX, currentIndex).apply()
         setChapter(currentIndex)
     }
 
     @SuppressLint("CheckResult")
     fun setChapter(currentIndex: Int) {
-        Log.d("main","setChapter: $currentIndex")
+        Timber.d("setChapter: $currentIndex")
         // get list of chapters
         val getList = db
             .getChapterList(TrashFamily.bookId)
@@ -81,19 +90,41 @@ class MainActivity : ComponentActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ p ->
-                setContent {
-                    ComposeBookTheme {
-                        // A surface container using the 'background' color from the theme
-                        Surface(color = MaterialTheme.colors.background) {
-                            val scrollState = rememberLazyListState()
-                            val coroutineScope = rememberCoroutineScope()
-                            coroutineScope.launch { scrollState.scrollToItem(0) }
-                            ChapterCompose(list = p, scrollState) { onNextClicked() }
-                        }
-                    }
-                }
+                setContent { MyApp(p) { onNextClicked() } }
             },
                 { e -> Timber.e(e, "networkParagraphs") })
+    }
+}
+
+@Composable
+fun MyApp(p: List<Paragraph>, onNextClicked: () -> Unit) {
+    ComposeBookTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(color = MaterialTheme.colors.background) {
+            val scrollState = rememberLazyListState()
+            val coroutineScope = rememberCoroutineScope()
+            Content(p, scrollState) {
+                coroutineScope.launch { scrollState.scrollToItem(0) }
+                onNextClicked()
+            }
+        }
+    }
+}
+
+@Composable
+fun Content(list: List<Paragraph>, scrollState: LazyListState, onNextClicked: () -> Unit) {
+    LazyColumn(state = scrollState) {
+        item { Navigation(onNextClicked) }
+        items(list) { s ->
+            Column(modifier = Modifier.padding(all = 4.dp)) {
+                Text(
+                    text = s.text,
+                    color = MaterialTheme.colors.primary,
+                    style = if (s.isHeader) MaterialTheme.typography.h6 else LocalTextStyle.current,
+                )
+            }
+        }
+        item { Navigation(onNextClicked) }
     }
 }
 
@@ -131,3 +162,5 @@ fun DefaultPreview() {
         }
     }
 }
+
+val LazyListState.isScrolledToEnd get() = layoutInfo.visibleItemsInfo.lastOrNull()?.index == layoutInfo.totalItemsCount - 1

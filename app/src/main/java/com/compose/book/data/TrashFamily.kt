@@ -18,7 +18,6 @@ object TrashFamily {
     fun parseChapterListUrls(doc: Document): List<Chapter> =
         doc.select("option")
             .mapIndexed { index, it ->
-                Timber.d("parseChapterListUrls: ${it.attr("value")}")
                 Chapter(
                     chapterTitle = it.text(),
                     chapterUrl = it.attr("value"),
